@@ -41,5 +41,70 @@ def quest5():
         rslt.append(x)
     print(rslt)
     
-quest5()
-        
+#quest5()
+
+
+# Exercise Question 6: write all file content into new file by skiping 
+# line 5 from following file
+def quest6(lineIgnr):
+    inp = open("test.txt", 'r')
+    s = inp.readlines()
+    out = open("NewFile.txt", "w")
+    n = len(s)
+    for i in range(lineIgnr-1):
+        out.write(s[i])
+    for i in range(lineIgnr, n):
+        out.write(s[i])
+    
+    inp.close()
+    out.close()
+    return
+
+quest6(5)   
+
+
+# Exercise Question 7: Accept any three string from one input() call
+def quest7():
+    s = input("Enter 3 string: ")
+    l = s.split()
+    n = len(l)
+    if(n!=3):
+        print('You didnt enter 3 strings, you entered {0}'.format(n))
+    else:
+        for i in range(3):
+            print(l[i])
+        #end for i in range
+    #
+    
+#quest7()
+
+
+# Exercise Question 8: You have the following data.
+# totalMoney = 1000
+# quantity = 3
+# price = 450
+# display above data using string.format() method
+
+def quest8():
+    totalMoney = 1000
+    quantity = 3
+    price = 450
+    outFile = open('money.txt','w')
+    s = 'I have {0} dollars so I can buy {1} football ' \
+          'for {2:.2f} dollars'.format(totalMoney,quantity,price)
+    print(s)
+    outFile.write(s)
+
+#quest8()
+    
+
+
+# Exercise Question 10: Read line number 4 from the following file
+def quest10():
+    inp = open('test.txt', 'r')
+    s = inp.readlines()
+    rslt = s[3]
+    print(rslt)
+    
+#quest10()
+    
